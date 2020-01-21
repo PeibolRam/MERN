@@ -1,0 +1,17 @@
+.navbar{
+    background-color: #033347;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.navbar a{
+    display: block;
+}
+
+.navbar img{
+    max-height: 10vh;
+}

@@ -5,7 +5,7 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="navbar">
-          <Link to="/">
+          <Link to="/Home">
             <img src="https://nyc3.digitaloceanspaces.com/dreamsengine/playcity/resources/uploads/2019/12/11105050/Logo-Play-01.png" alt="logo"/>
           </Link>
       </nav>

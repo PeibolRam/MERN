@@ -1,0 +1,15 @@
+.new_post{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    margin: 1em auto;
+}
+
+.new_post form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}

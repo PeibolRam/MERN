@@ -1,20 +1,12 @@
-.content-area {
-    height: 90vh;
-    background-image: url('https://nyc3.digitaloceanspaces.com/dreamsengine/playcity/resources/uploads/2019/06/26204601/play-city-acoxpa_54.jpg');
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-size: cover;
-}
-
 .container {
-    height: 100%;
     width: 100%;
-    background-color: rgba(151,97,37,.55);
+    /* background-color: rgba(151,97,37,.55); */
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     color: #fff;
+    padding: 1em 0;
 }
 
 .container h4{
@@ -22,6 +14,7 @@
     font-family: Lato,sans-serif;
     font-size: 3rem;
     font-weight: 700;
+    margin: 1em auto;
 }
 
 .container a {

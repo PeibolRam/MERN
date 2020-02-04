@@ -5,9 +5,9 @@ import '../styles/landing.css'
 class Landing extends Component {
   render() {
     return (
-      <div class="content-area">
+      <div className="content-area">
         <div className="container">
-          <h4>Ingresa para ver la información interna de Playcity</h4>
+          <h4>Intra Share Playcity</h4>
           <div className="btns">
             <Link to="/register">
               Registrate
@@ -17,8 +17,7 @@ class Landing extends Component {
             </Link>
           </div>
         </div>
-      </div>
-      
+      </div>  
     );
   }
 }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import { Link } from "react-router-dom";
 import '../styles/dashboard.css'
 class Dashboard extends Component {
   onLogoutClick = e => {
@@ -10,15 +11,22 @@ class Dashboard extends Component {
   };
 render() {
     const { user } = this.props.auth;
-return (
+  return (
     <div className="content-area">
       <div className="container">
+        <nav>
+          <ul>
+            <li>
+              <Link to="/publish">Publicar</Link>
+            </li>
+          </ul>
+          <button onClick={this.onLogoutClick} className="logout_btn">
+            Cerrar sesión
+          </button>    
+        </nav>
         <h4>
-          Kiubule pinche {user.name.split(" ")[0]} ya te logiastes
+          Hola {user.name.split(" ")[0]} 
         </h4>
-        <button onClick={this.onLogoutClick} className="logout_btn">
-          Cerrar sesión
-        </button>
       </div>
     </div>
     );

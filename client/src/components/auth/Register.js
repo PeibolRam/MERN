@@ -15,45 +15,46 @@ class Register extends Component {
       errors: {}
     };
   }
-componentDidMount() {
-  // If logged in and user navigates to Register page, should redirect them to dashboard
-  if (this.props.auth.isAuthenticated) {
-    this.props.history.push("/dashboard");
-  }
-}
-componentWillReceiveProps(nextProps) {
-    if (nextProps.errors) {
-      this.setState({
-        errors: nextProps.errors
-      });
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/home");
     }
   }
-onChange = e => {
-    this.setState({ [e.target.id]: e.target.value });
-  };
-onSubmit = e => {
-    e.preventDefault();
-const newUser = {
-      name: this.state.name,
-      email: this.state.email,
-      password: this.state.password,
-      password2: this.state.password2
+  componentWillReceiveProps(nextProps) {
+      if (nextProps.errors) {
+        this.setState({
+          errors: nextProps.errors
+        });
+      }
+    }
+  onChange = e => {
+      this.setState({ [e.target.id]: e.target.value });
     };
-this.props.registerUser(newUser, this.props.history); 
+    
+  onSubmit = e => {
+      e.preventDefault();
+      const newUser = {
+        name: this.state.name,
+        email: this.state.email,
+        password: this.state.password,
+        password2: this.state.password2
+      };
+    this.props.registerUser(newUser, this.props.history); 
   };
-render() {
-    const { errors } = this.state;
-return (
-  <div className="content-area">
+  render() {
+      const { errors } = this.state;
+  return (
+    <div className="content-area">
       <div className="container">
-            <div className="col s12">
+            <div>
               <h4>Registrate</h4>
-              <p className="grey-text text-darken-1">
+              <p>
                 ¿Ya tienes cuenta? <Link to="/login">Log in</Link>
               </p>
             </div>
             <div className="login_container">
               <form noValidate onSubmit={this.onSubmit}>
+                <label htmlFor="name">Nombre</label>
                   <input
                     onChange={this.onChange}
                     value={this.state.name}
@@ -64,8 +65,7 @@ return (
                       invalid: errors.name
                     })}
                   />
-                  <label htmlFor="name">Nombre</label>
-                  <span className="red-text">{errors.name}</span>
+                  <label htmlFor="email">Email</label>
                   <input
                     onChange={this.onChange}
                     value={this.state.email}
@@ -76,8 +76,7 @@ return (
                       invalid: errors.email
                     })}
                   />
-                  <label htmlFor="email">Email</label>
-                  <span className="red-text">{errors.email}</span>
+                  <label htmlFor="password">Contraseña</label>
                   <input
                     onChange={this.onChange}
                     value={this.state.password}
@@ -88,8 +87,7 @@ return (
                       invalid: errors.password
                     })}
                   />
-                  <label htmlFor="password">Contraseña</label>
-                  <span className="red-text">{errors.password}</span>
+                  <label htmlFor="password2">Confirma tu contraseña</label>
                   <input
                     onChange={this.onChange}
                     value={this.state.password2}
@@ -100,9 +98,7 @@ return (
                       invalid: errors.password2
                     })}
                   />
-                  <label htmlFor="password2">Confirma contraseña</label>
-                  <span className="red-text">{errors.password2}</span>
-                <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+                <div>
                   <button type="submit">Registrate</button>
                 </div>
               </form>

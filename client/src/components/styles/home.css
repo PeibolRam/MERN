@@ -1,0 +1,14 @@
+.post{
+    margin: 1em auto;
+    width: 50%;
+    background: #ffffff50;
+    padding: 1em;
+    border-radius: 15px;
+}
+
+.post_info{
+    display: flex;
+    justify-content: space-around;
+    margin: 1em auto;
+    font-weight: 900;
+}

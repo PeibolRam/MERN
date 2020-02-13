@@ -5,8 +5,7 @@ import {
 
 // Add post
 export const addPost = (postData, history) => dispatch => {
-  axios
-    .post("/api/post/add", postData)
+  axios.post("/api/post/add", postData)
     .then(res => {
       history.push("/home")
     }) 
@@ -17,6 +16,7 @@ export const addPost = (postData, history) => dispatch => {
       })
     );
 };
+
 
 
 

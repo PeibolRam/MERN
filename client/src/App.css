@@ -4,8 +4,8 @@
 }
 
 .App{
-    background: rgb(20,23,27);
-    background: linear-gradient(0deg, rgba(20,38,143,1) 0%, rgba(20,23,27,1) 100%);
+    background: rgb(20,38,143);
+    background: linear-gradient(0deg, rgba(20,23,27,1) 0%, rgba(20,38,143,1) 100%);
     overflow: scroll;
     min-height: 100vh;
 }

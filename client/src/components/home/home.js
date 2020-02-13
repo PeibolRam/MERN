@@ -38,6 +38,9 @@ class Home extends Component {
         return (
             <div className="content-area">
                 <div className="container">
+                     <button onClick={this.onLogoutClick} className="logout_btn">
+                        Cerrar sesión
+                    </button> 
                     <h4>Hola {user.name.split(" ")[0]}</h4>
                     <Post />
                     {this.state.arr.reverse().map((postsP) => { 
@@ -52,9 +55,7 @@ class Home extends Component {
                             
                         )
                     })}
-                    <button onClick={this.onLogoutClick} className="logout_btn">
-                        Cerrar sesión
-                    </button>   
+                      
                 </div>
             </div>
         );

@@ -11,13 +11,12 @@ class Post extends Component {
         this.state = {
             username: "",
             content: "",
-            date: ""
+            date: "",
+            filePost: ""
         };
+        this.onSubmit = this.onSubmit.bind(this);
+        this.onChange = this.onChange.bind(this);
     }
-
-    onChange = e => {
-        this.setState({ [e.target.id]: e.target.value });
-    };
 
     onSubmit = e => {
         const { user } = this.props.auth;
@@ -25,16 +24,27 @@ class Post extends Component {
         const newPost = {
             username: user.name,
             content: this.state.content,
-            date: this.state.date
+            date: this.state.date,
+            filePost: this.state.filePost
         }
-        window.location.reload();
+        //window.location.reload();
         this.props.addPost(newPost, this.props.history); 
-    }
+        console.log(newPost)
+     }
+
+    onChange = e => {
+        this.setState({ [e.target.id]: e.target.value });
+
+    };
+
+    onChangeFile = e => {
+        this.setState({ filePost: e.target.files[0]});
+    };
 
     render() {
         return (
             <div className="new_post">
-                <form noValidate onSubmit={this.onSubmit}>
+                <form noValidate onSubmit={this.onSubmit} method="post"  encType="multipart/form-data">
                     <label>Crea una publicación: </label>
                     <textarea
                         onChange={this.onChange}
@@ -43,6 +53,7 @@ class Post extends Component {
                         value={this.state.content}
                         placeholder="Cuentanos"
                     /> 
+                    <input type="file" id="filePost" onChange={this.onChangeFile}/>
                     <button type="submit">Publicar</button>
                 </form>
             </div>
